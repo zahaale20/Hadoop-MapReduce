@@ -1,0 +1,86 @@
+1. Request count for each URL path, sorted by request count (ascending)
+    - Run Command: ./gradlew run --args="1 input_access_log 1"
+    - Output File: 1
+    - Output:
+        /M83A	1
+        /MSOffice/cltreq.asp?UL=1&ACT=4&BUILD=2614&STRMVER=4&CAPREQ=0	1
+        /_vti_bin/owssvr.dll?UL=1&ACT=4&BUILD=2614&STRMVER=4&CAPREQ=0	1
+        ...
+        /twiki/bin/view/Main/SpamAssassinTaggingOnly	18
+        /razor.html	23
+        /robots.txt	27
+        /favicon.ico	28
+        /	31
+        /twiki/pub/TWiki/TWikiLogos/twikiRobot46x50.gif	32
+        /twiki/bin/view/Main/WebHome	40
+
+
+2. Request count for each HTTP response code, sorted by response code (ascending)
+    - Run Command: ./gradlew run --args="2 input_access_log 2"
+    - Output File: 2
+    - Output:
+        200	1272
+        302	6
+        401	123
+        404	5
+
+
+3. Total bytes sent to the client with a specified hostname or IPv4 address (you may hard code an address)
+    - Run Command: ./gradlew run --args="3 input_access_log 3"
+    - Output File: 3
+    - Output:
+        194.151.73.43	43518
+
+
+4. Based on a given URL (hard coded), compute a request count for each client (hostname or IPv4) who accessed that URL,
+ sorted by request count (ascending)
+    - Run Command: ./gradlew run --args="4 input_access_log 5"
+    - Output File: 4
+    - Output:
+        0x503e4fce.virnxx2.adsl-dhcp.tele.dk	1
+        145.253.208.9	1
+        195.246.13.119	1
+        200-55-104-193.dsl.prima.net.ar	1
+        203.147.138.233	1
+        208-186-146-13.nrp3.brv.mn.frontiernet.net	1
+        65-37-13-251.nrp2.roc.ny.frontiernet.net	1
+        68-174-110-154.nyc.rr.com	1
+        archserve.id.ucsb.edu	1
+        c-24-11-14-147.client.comcast.net	1
+        dsl-80-43-113-44.access.uk.tiscali.com	1
+        fw1.millardref.com	1
+        grandpa.mmlc.northwestern.edu	1
+        h24-70-56-49.ca.shawcable.net	1
+        h24-70-69-74.ca.shawcable.net	1
+        ladybug.cns.vt.edu	1
+        p213.54.168.132.tisdip.tiscali.de	1
+        ppp2.p33.is.com.ua	1
+        spica.ukc.ac.uk	1
+        ip68-228-43-49.tc.ph.cox.net	2
+        market-mail.panduit.com	2
+        pool-68-160-195-60.ny325.east.verizon.net	2
+        208-38-57-205.ip.cal.radiant.net	3
+
+
+5. Request count for each calendar month and year, sorted chronologically
+    - Run Command: ./gradlew run --args="5 input_access_log 5"
+    - Output File: 5
+    - Output:
+        Mar 12, 2004	287227
+        Mar 09, 2004	978411
+        Mar 11, 2004	1265093
+        Mar 10, 2004	1357604
+        Mar 07, 2004	2427368
+        Mar 08, 2004	4617302
+
+
+6. For each calendar day that appears in the file, return total bytes sent. Sort by total bytes in ascending order.
+    - Run Command: ./gradlew run --args="6 input_access_log 6"
+    - Output File: 6
+    - Output:
+        Mar 12, 2004	287227
+        Mar 09, 2004	978411
+        Mar 11, 2004	1265093
+        Mar 10, 2004	1357604
+        Mar 07, 2004	2427368
+        Mar 08, 2004	4617302
